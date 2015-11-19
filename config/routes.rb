@@ -57,4 +57,5 @@ IntegrationOptionsDemo::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
   match '/option/1' => 'Application#option1'
+  match '/option/2' => 'Application#option2'
 end
