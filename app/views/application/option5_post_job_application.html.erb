@@ -1,0 +1,20 @@
+<div class="row">
+<h4>Pull jobs from API w/ on-site submission</h4>
+</div>
+
+<br>
+
+<div class="row">
+  <h4>
+    <% if @success %>Success!<% else %>Failure :(<% end %>
+  </h4>
+
+  <% if @success == false %>
+    <%= @error %>
+  <% end %>
+  <p></p>
+
+</div>
+
+<a href="/option/5/job/<%= @job_id %>">Back</a>
+

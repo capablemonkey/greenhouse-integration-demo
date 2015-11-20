@@ -1,0 +1,46 @@
+<div class="row">
+<h4>Pull jobs from API w/ on-site submission</h4>
+</div>
+
+<br>
+
+<div class="row">
+  <h4><%= @job['title'] %></h4>
+  <p>Location: <%= @job['location']['name'] %></p>
+  <p>Department: <%= @job['departments'][0]['name'] %> </p>
+  <p>Last updated: <%= @job['updated_at'] %></p>
+
+  <h5>Description</h5>
+  <p> <%= raw CGI.unescapeHTML(@job['content']) %> </p>
+
+  <form action="/option/5/job/<%= @job['id'] %>" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
+    <% @job['questions'].each do |question| %>
+      <fieldset class="form-group">
+        <p><%= question['label'] %></p>
+        <% question['fields'].each do |field| %>
+          <% if field['type'] == 'input_text' %>
+            <input type="text" name="<%= field["name"] %>">
+          <% elsif field['type'] == 'textarea' %>
+            <textarea name="<%= field["name"] %>"></textarea>
+          <% elsif field['type'] == 'multi_value_single_select' %>
+            <select name="<%= field["name"] %>">
+              <% field['values'].each do |value| %>
+                <option value="<%= value['value'] %>"><%= value['label'] %></option>
+              <% end %>
+            </select>
+          <% elsif field['type'] == 'multi_value_multi_select' %>
+
+          <% elsif field['type'] == 'input_file' %>
+            <input type="file" name="<%= field["name"] %>" size="40">
+          <% end %>
+        <% end %>
+      </fieldset>
+    <% end %>
+
+    <button type="submit">Submit!</button>
+  </form>
+
+</div>
+
+<a href="/option/4">Back</a>
+

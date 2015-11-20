@@ -1,0 +1,24 @@
+<div class="row">
+<h4>Pull jobs from API w/ on-site submission</h4>
+</div>
+
+<br>
+
+<% @offices.each do |office| %>
+	<div class="row">
+		<h4><%= office["name"] %></h4>
+
+		<% office["departments"].each do |department| %>
+			<% if not department["jobs"].empty? %>
+				<div class="card card-block">
+					<h5><%= department["name"] %></h5>
+					<div class="list-group">
+					<% department["jobs"].each do |job| %>
+						<a href="/option/5/job/<%= job['id'] %>" class="job list-group-item"><%= job["title"] %></a>
+					<% end %>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+<% end %>

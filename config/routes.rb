@@ -62,4 +62,7 @@ IntegrationOptionsDemo::Application.routes.draw do
   get '/option/3' => 'Application#option3'
   get '/option/4' => 'Application#option4'
   get '/option/4/job/:jobId' => 'Application#option4_get_job'
+  get '/option/5' => 'Application#option5'
+  get '/option/5/job/:jobId' => 'Application#option5_get_job'
+  post '/option/5/job/:jobId' => 'Application#option5_post_job_application'
 end
