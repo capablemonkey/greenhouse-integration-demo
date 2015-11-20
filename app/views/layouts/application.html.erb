@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Greenhouse Integration Options Demo</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+
   <%= javascript_include_tag "application" %>
+
+  <!-- Boostrap -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div id="header">
+  <div class="container">
+    <h1>Greenhouse Integration Demo</h1>
+    <p class="lead">Check out the different ways you can integrate your Greenhouse job board with your site or application.</p>
+  </div>
+</div>
+
+  <div class="container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

@@ -1,19 +1,25 @@
-<h1>Pull jobs from API w/ on-site submission</h1>
+<div class="row">
+<h1 class="display-2">Pull jobs from API w/ on-site submission</h1>	
+</div>
 
 <% @offices.each do |office| %>
-	<h3><%= office["name"] %></h3>
+	<div class="row">
+		<h4><%= office["name"] %></h4>
 
-	<% office["departments"].each do |department| %>
-		<% if not department["jobs"].empty? %>
-			<h5><%= department["name"] %></h5>
-			<ul>
-			<% department["jobs"].each do |job| %>
-				<!-- in application.js, we do Grnhse.Iframe.load() when a job link is clicked: -->
-				<li><a href="#" data-job-id="<%= job["id"] %>" class="job"><%= job["title"] %></a></li>
+		<% office["departments"].each do |department| %>
+			<% if not department["jobs"].empty? %>
+				<div class="card card-block">
+					<h5><%= department["name"] %></h5>
+					<div class="list-group">
+					<% department["jobs"].each do |job| %>
+						<!-- in application.js, we do Grnhse.Iframe.load() when a job link is clicked: -->
+						<a href="#" data-job-id="<%= job["id"] %>" class="job list-group-item"><%= job["title"] %></a>
+					<% end %>
+					</div>
+				</div>
 			<% end %>
-			</ul>
 		<% end %>
-	<% end %>
+	</div>
 <% end %>
 
 <div id="grnhse_app"></div>
