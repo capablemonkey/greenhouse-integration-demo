@@ -1,16 +1,26 @@
-<h1>Pull jobs from API w/ off-site submission</h1>
+<div class="row">
+  <h4>Pull jobs from API w/ off-site submission</h4>
+</div>
 
-<% @offices.each do |office| %>
-	<h3><%= office["name"] %></h3>
+<br>
 
-	<% office["departments"].each do |department| %>
-		<% if not department["jobs"].empty? %>
-			<h5><%= department["name"] %></h5>
-			<ul>
-			<% department["jobs"].each do |job| %>
-				<li><a href="<%= job["absolute_url"] %>" target="_blank"><%= job["title"] %></a></li>
-			<% end %>
-			</ul>
-		<% end %>
-	<% end %>
-<% end %>
+<div class="row">
+  <% @offices.each do |office| %>
+    <div class="row">
+      <h4><%= office["name"] %></h4>
+
+      <% office["departments"].each do |department| %>
+        <% if not department["jobs"].empty? %>
+          <div class="card card-block">
+            <h5><%= department["name"] %></h5>
+            <div class="list-group">
+            <% department["jobs"].each do |job| %>
+              <a href="<%= job["absolute_url"] %>" class="job list-group-item" target="_blank"><%= job["title"] %></a>
+            <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

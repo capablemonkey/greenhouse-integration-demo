@@ -1,6 +1,8 @@
 <div class="row">
-<h1 class="display-1">Pull jobs from API w/ on-site submission</h1>
+<h4>Pull jobs from API w/ on-site submission</h4>
 </div>
+
+<br>
 
 <% @offices.each do |office| %>
 	<div class="row">
@@ -12,8 +14,7 @@
 					<h5><%= department["name"] %></h5>
 					<div class="list-group">
 					<% department["jobs"].each do |job| %>
-						<!-- in application.js, we do Grnhse.Iframe.load() when a job link is clicked: -->
-						<a href="#" data-job-id="<%= job["id"] %>" class="job list-group-item"><%= job["title"] %></a>
+						<a href="/option/4/job/<%= job['id'] %>" class="job list-group-item"><%= job["title"] %></a>
 					<% end %>
 					</div>
 				</div>
@@ -21,7 +22,3 @@
 		<% end %>
 	</div>
 <% end %>
-
-<div id="grnhse_app"></div>
-
-<script src="https://boards.greenhouse.io/embed/job_board/js?for=vaulttec"></script>

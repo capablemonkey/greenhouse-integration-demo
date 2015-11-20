@@ -5,13 +5,26 @@ JOB_BOARD_NAME = "vaulttec"
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  def option1
+    render "option1"
+  end
+
+  def option2
+    render "option2"
+  end
+
   def option3
   	@offices = (JSON.parse RestClient.get "https://api.greenhouse.io/v1/boards/#{JOB_BOARD_NAME}/embed/offices")["offices"]
-  	render "option3.erb"
+  	render "option3"
   end
 
   def option4
   	@offices = (JSON.parse RestClient.get "https://api.greenhouse.io/v1/boards/#{JOB_BOARD_NAME}/embed/offices")["offices"]
-  	render "option4.erb"
+  	render "option4"
+  end
+
+  def option4_get_job
+    @job_id = params[:jobId]
+    render "option4_get_job"
   end
 end

@@ -13,9 +13,3 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-
-$().ready(function() {
-	$('.job').click(function() {
-		Grnhse.Iframe.load($(this).data('job-id'));
-	});
-});

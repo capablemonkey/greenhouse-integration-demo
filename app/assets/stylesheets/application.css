@@ -23,3 +23,12 @@
 #header p {
   color: #D8FFF8;
 }
+
+#footer {
+  margin-top: 1.5em;
+}
+
+.no-link-decoration, .no-link-decoration:visited, .no-link-decoration:hover {
+  text-decoration: none;
+  color: white;
+}

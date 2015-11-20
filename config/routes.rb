@@ -57,7 +57,9 @@ IntegrationOptionsDemo::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
   get '/' => 'Application#index'
+  get '/option/1' => 'Application#option1'
   get '/option/2' => 'Application#option2'
   get '/option/3' => 'Application#option3'
   get '/option/4' => 'Application#option4'
+  get '/option/4/job/:jobId' => 'Application#option4_get_job'
 end
