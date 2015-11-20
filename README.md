@@ -6,7 +6,7 @@ Most of this repository is boilerplate code from Rails.  The interesting bits ar
 
 This is intended to be a reference -- feel free to copy and paste any code you find!  When you poke around, you'll realize how easy Greenhouse is to integrate.
 
-Visit the live version here: TODO
+Visit the live version here: https://greenhouse-integration-demo.herokuapp.com/
 
 ### Running
 
@@ -32,7 +32,7 @@ Finally, head over to [http://localhost:3000](http://localhost:3000).
 
 ### Configuration
 
-By default, it'll use a toy job board and sample API credentials.  If you'd like to use your own, just edit the `config.rb` file.
+By default, it'll use a toy job board and sample API credentials.  If you'd like to use your own, just edit `JOB_BOARD_NAME` and `JOB_BOARD_API_KEY` in the `/app/controllers/application_controller.rb` file.
 
 ### Contributing
 
