@@ -56,8 +56,8 @@ IntegrationOptionsDemo::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
-  match '/' => 'Application#index'
-  match '/option/2' => 'Application#option2'
-  match '/option/3' => 'Application#option3'
-  match '/option/4' => 'Application#option4'
+  get '/' => 'Application#index'
+  get '/option/2' => 'Application#option2'
+  get '/option/3' => 'Application#option3'
+  get '/option/4' => 'Application#option4'
 end
