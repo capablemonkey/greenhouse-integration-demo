@@ -1,0 +1,16 @@
+<h1>Pull jobs from API w/ off-site submission</h1>
+
+<% @offices.each do |office| %>
+	<h3><%= office["name"] %></h3>
+
+	<% office["departments"].each do |department| %>
+		<% if not department["jobs"].empty? %>
+			<h5><%= department["name"] %></h5>
+			<ul>
+			<% department["jobs"].each do |job| %>
+				<li><a href="<%= job["absolute_url"] %>" target="_blank"><%= job["title"] %></a></li>
+			<% end %>
+			</ul>
+		<% end %>
+	<% end %>
+<% end %>

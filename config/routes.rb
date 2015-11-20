@@ -59,4 +59,5 @@ IntegrationOptionsDemo::Application.routes.draw do
   match '/option/1' => 'Application#option1'
   match '/option/2' => 'Application#option2'
   match '/option/3' => 'Application#option3'
+  match '/option/4' => 'Application#option4'
 end
